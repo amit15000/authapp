@@ -1,6 +1,6 @@
 const { mongoose } = require("mongoose");
 
-const userSchema = new mongoose.userSchema({
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
     require: true,
@@ -12,7 +12,7 @@ const userSchema = new mongoose.userSchema({
   },
   password: {
     type: String,
-    required: true,
+    require: true,
   },
   role: {
     type: String,
