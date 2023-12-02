@@ -5,7 +5,7 @@ require("dotenv").config();
 
 //mount route
 const authRoutes = require("./routes/authRoutes.js");
-app.use("api/vi", authRoutes);
+app.use("/api/vi", authRoutes);
 
 app.listen(process.env.URL || 4000, () => {
   console.log("Server started successfully");
