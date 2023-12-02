@@ -6,4 +6,17 @@ const userSchema = new mongoose.userSchema({
     require: true,
     trim: true,
   },
+  email: {
+    type: String,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  role: {
+    type: String,
+    enum: ["Admin", "Student", "Visitor"],
+  },
 });
+module.exports = mongoose.model("Person", userSchema);
