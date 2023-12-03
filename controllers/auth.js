@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 exports.signup = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
-    const existingPerson = await Person.find({ email });
+    const existingPerson = await Person.findOne({ email: email });
     if (existingPerson) {
       //user alreay exitst-->no need to signup
       return res.json({
