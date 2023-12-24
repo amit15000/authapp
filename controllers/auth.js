@@ -77,9 +77,10 @@ exports.login = async (req, res) => {
 
       //we have create cokkie now
 
-      //add new token elemen to the user object
-      // user.token = token;  //token not been inserted in user obeject except this -- everything fine
-      //remove password from this object
+      // add new token elemen to the user object
+      user = user.toObject();
+      user.token = token; //token not been inserted in user obeject except this -- everything fine
+      // remove password from this object
       user.password = undefined;
 
       const options = {
