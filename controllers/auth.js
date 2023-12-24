@@ -33,7 +33,12 @@ exports.signup = async (req, res) => {
       success: true,
       message: "User created successfully",
     });
-  } catch {}
+  } catch {
+    return res.status(500).json({
+      sucess: false,
+      message: "Error in creating user",
+    });
+  }
 };
 exports.login = async (req, res) => {
   try {
@@ -49,7 +54,7 @@ exports.login = async (req, res) => {
     }
     //check if email is present in db
 
-    const user = await Person.findOne({ email });
+    let user = await Person.findOne({ email });
 
     if (!user) {
       //user has not yet signed up
