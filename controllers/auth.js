@@ -80,7 +80,7 @@ exports.login = async (req, res) => {
         expiresIn: "2h",
       });
 
-      //we have create cokkie now
+      //we have to create cokkie now
 
       // add new token elemen to the user object
       user = user.toObject();

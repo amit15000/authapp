@@ -1,10 +1,14 @@
 const express = require("express");
+const cors = require("cors"); // Add this line
 const app = express();
+const PORT = process.env.PORT || 3000;
+
 require("./config/database").connect();
 require("dotenv").config();
-PORT = process.env.PORT || 4000;
-//mount route
-const authRoutes = require("./routes/authRoutes.js");
+const authRoutes = require("./routes/authRoutes");
+
+// Mount route
+app.use(cors()); // Enable CORS
 app.use(express.json());
 app.use("/api/v1", authRoutes);
 
@@ -13,5 +17,5 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server started successfully on PORT : ${PORT}`);
+  console.log(`Server started successfully on PORT: ${PORT}`);
 });
