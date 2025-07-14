@@ -10,7 +10,7 @@ It supports:
 
 ---
 
-## 🚀 Live Demo
+## 🚀 Live 
 
 👉 [https://authapp-pt9w.onrender.com](https://authapp-pt9w.onrender.com)
 
