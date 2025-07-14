@@ -1,5 +1,5 @@
 const Person = require("../model/Person");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
 exports.signup = async (req, res) => {

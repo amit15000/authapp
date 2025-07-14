@@ -1,10 +1,10 @@
 const express = require("express");
 const cors = require("cors"); // Add this line
 const app = express();
-const PORT = process.env.PORT || 3000;
-
-require("./config/database").connect();
 require("dotenv").config();
+require("./config/database").connect();
+
+const PORT = process.env.PORT;
 const authRoutes = require("./routes/authRoutes");
 
 // Mount route
